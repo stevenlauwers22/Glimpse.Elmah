@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Glimpse.Elmah.Sample</id>
+    <version>1.0.0</version>
+    <title>Glimpse for Elmah sample application</title>
+    <authors>Steven Lauwers</authors>
+    <owners>Steven Lauwers</owners>
+    <description>Sample application that demonstrates the integration between Glimpse and Elmah.</description>
+    <language>en-US</language>
+    <projectUrl>https://github.com/stevenlauwers22/Glimpse.Elmah/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <dependencies>
+      <dependency id="elmah" version="1.2.2" />
+      <dependency id="Glimpse.AspNet" version="1.0.0" />
+      <dependency id="Glimpse.Elmah" version="1.0.0" />
+    </dependencies>
+    <tags>Glimpse, Elmah</tags>
+  </metadata>
+</package>
