@@ -20,7 +20,7 @@
       <frameworkAssembly assemblyName="System.Core" targetFramework="net40" />
       <frameworkAssembly assemblyName="System.Web" targetFramework="net40" />
     </frameworkAssemblies>
-    <tags>Glimpse, Elmah</tags>
+    <tags>Glimpse Elmah</tags>
   </metadata>
   <files>
     <file src="Errors.aspx" target="Content" />

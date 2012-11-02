@@ -14,7 +14,7 @@
       <dependency id="elmah.corelibrary" version="1.2.2" />
       <dependency id="Glimpse" version="1.0.0" />
     </dependencies>
-    <tags>Glimpse, Elmah</tags>
+    <tags>Glimpse Elmah</tags>
   </metadata>
   <files>
     <file src="bin\Release\Glimpse.Elmah.dll" target="lib\net40" />
