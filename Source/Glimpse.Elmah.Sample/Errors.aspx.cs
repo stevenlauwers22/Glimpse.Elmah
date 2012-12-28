@@ -9,6 +9,9 @@ namespace Glimpse.Elmah.Sample
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+                return;
+
             var exceptionType = (typeof(Exception));
             var exceptionTypes = Assembly
                 .GetAssembly(exceptionType)

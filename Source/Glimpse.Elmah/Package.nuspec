@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Glimpse.Elmah</id>
-    <version>1.0.0</version>
+    <version>1.0.0-rc1</version>
     <title>Glimpse for Elmah</title>
     <authors>Steven Lauwers</authors>
     <owners>Steven Lauwers</owners>
@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <dependencies>
       <dependency id="elmah.corelibrary" version="1.2.2" />
-      <dependency id="Glimpse" version="1.0.0" />
+      <dependency id="Glimpse" version="1.0.0-rc1" />
     </dependencies>
     <tags>Glimpse Elmah</tags>
   </metadata>

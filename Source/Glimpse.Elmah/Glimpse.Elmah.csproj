@@ -33,11 +33,11 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Contracts\GetErrors\ErrorModel.cs" />
+    <Compile Include="Plumbing\GetErrors\ErrorModel.cs" />
     <Compile Include="Plumbing\GetErrors\GetErrorsHandler.cs" />
-    <Compile Include="Contracts\GetErrors\GetErrorsRequest.cs" />
-    <Compile Include="Contracts\GetErrors\GetErrorsResult.cs" />
-    <Compile Include="Contracts\GetErrors\IGetErrorsHandler.cs" />
+    <Compile Include="Plumbing\GetErrors\GetErrorsRequest.cs" />
+    <Compile Include="Plumbing\GetErrors\GetErrorsResult.cs" />
+    <Compile Include="Plumbing\GetErrors\IGetErrorsHandler.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -48,7 +48,7 @@
     </Reference>
     <Reference Include="Glimpse.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Glimpse.1.0.0-ctp1\lib\net40\Glimpse.Core.dll</HintPath>
+      <HintPath>..\packages\Glimpse.1.0.0-rc1\lib\net40\Glimpse.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

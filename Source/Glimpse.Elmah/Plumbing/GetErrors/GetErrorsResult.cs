@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Glimpse.Elmah.Contracts.GetErrors
+namespace Glimpse.Elmah.Plumbing.GetErrors
 {
     public class GetErrorsResult
     {

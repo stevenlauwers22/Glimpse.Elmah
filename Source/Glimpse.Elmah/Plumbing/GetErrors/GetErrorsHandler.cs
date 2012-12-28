@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Web;
 using Elmah;
-using Glimpse.Elmah.Contracts.GetErrors;
 
 namespace Glimpse.Elmah.Plumbing.GetErrors
 {

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Elmah", "Source\Glimpse.Elmah\Glimpse.Elmah.csproj", "{E932FAD7-BD29-41F0-A739-AAC9FE5F2290}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Elmah", "Glimpse.Elmah\Glimpse.Elmah.csproj", "{E932FAD7-BD29-41F0-A739-AAC9FE5F2290}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Elmah.Sample", "Source\Glimpse.Elmah.Sample\Glimpse.Elmah.Sample.csproj", "{E0516705-CC33-4D59-A14C-825D93D555FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Elmah.Sample", "Glimpse.Elmah.Sample\Glimpse.Elmah.Sample.csproj", "{E0516705-CC33-4D59-A14C-825D93D555FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

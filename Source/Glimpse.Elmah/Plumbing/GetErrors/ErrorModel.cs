@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Glimpse.Elmah.Contracts.GetErrors
+namespace Glimpse.Elmah.Plumbing.GetErrors
 {
     public class ErrorModel
     {

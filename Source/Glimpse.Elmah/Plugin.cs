@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Glimpse.Core.Extensibility;
-using Glimpse.Elmah.Contracts.GetErrors;
 using Glimpse.Elmah.Plumbing.GetErrors;
 
 namespace Glimpse.Elmah
@@ -27,7 +26,7 @@ namespace Glimpse.Elmah
 
         public override object GetData(ITabContext context)
         {
-            var getErrorsRequest = new GetErrorsRequest { PageIndex = 0, PageSize = 10 };
+            var getErrorsRequest = new GetErrorsRequest { PageIndex = 0, PageSize = 15 };
             var getErrorsResult = _getErrorsHandler.Handle(getErrorsRequest);
             if (getErrorsResult.Errors == null)
                 return null;
