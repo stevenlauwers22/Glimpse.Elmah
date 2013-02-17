@@ -34,7 +34,7 @@ task package -depends build {
     exec { & $tools_dir\NuGet.CommandLine.2.1.0\tools\nuget.exe pack $source_dir\Glimpse.Elmah.Sample\Package.nuspec -OutputDirectory $build_dir }
 }
 
-task publish {
+task publish -depends package {
     "Publishing Glimpse.Elmah.nupkg"
     $apiKey = Read-Host 'Enter your API key: '
     $version = Read-Host 'Enter the number of the version you want to publish: '
