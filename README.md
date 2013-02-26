@@ -1,1 +1,1 @@
-#Glimpse.Elmah
+#Glimpse for Elmah
