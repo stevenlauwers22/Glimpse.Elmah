@@ -11,5 +11,6 @@ namespace Glimpse.Elmah.Plumbing.GetErrors
         public string Message { get; set; }
         public string User { get; set; }
         public DateTime Date { get; set; }
+        public string DetailsUrl { get; set; }
     }
 }

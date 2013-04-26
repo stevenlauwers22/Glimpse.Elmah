@@ -42,7 +42,8 @@ namespace Glimpse.Elmah
 			        "Error",
 			        "User",
 			        "Date",
-			        "Time"
+			        "Time",
+                    "Details"
 			    }
 			};
 
@@ -57,7 +58,8 @@ namespace Glimpse.Elmah
                     errorEntry.Message,
                     errorEntry.User,
                     errorEntry.Date.ToShortDateString(),
-                    errorEntry.Date.ToShortTimeString()
+                    errorEntry.Date.ToShortTimeString(),
+                    string.Format("!{0}!", errorEntry.DetailsUrl)
                 })
                 .ToList());
 

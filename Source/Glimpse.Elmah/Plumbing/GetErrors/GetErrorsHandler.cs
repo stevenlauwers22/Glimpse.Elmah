@@ -16,6 +16,7 @@ namespace Glimpse.Elmah.Plumbing.GetErrors
                 return new GetErrorsResult();
 
             // Convert the Elmah errors to error info objects
+            var path = VirtualPathUtility.ToAbsolute("~/", HttpContext.Current.Request.ApplicationPath);
             var errors = errorList
                 .Select(errorEntry =>
                         new ErrorModel
@@ -26,7 +27,8 @@ namespace Glimpse.Elmah.Plumbing.GetErrors
                             Type = errorEntry.Error.Type,
                             Message = errorEntry.Error.Message,
                             User = errorEntry.Error.User,
-                            Date = errorEntry.Error.Time
+                            Date = errorEntry.Error.Time,
+                            DetailsUrl = string.Format("<a href=\"{0}{1}/detail?id={2}&\" target=\"_blank\">View</a>", path, "elmah.axd", errorEntry.Id)
                         })
                 .ToList();
 
