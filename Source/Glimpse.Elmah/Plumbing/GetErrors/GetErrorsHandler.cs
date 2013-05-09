@@ -18,7 +18,9 @@ namespace Glimpse.Elmah.Plumbing.GetErrors
 
             // Convert the Elmah errors to error info objects
             var path = VirtualPathUtility.ToAbsolute("~/", HttpContext.Current.Request.ApplicationPath);
-            var elmahPath = ConfigurationManager.AppSettings["elmah.path"] ?? "elmah.axd";
+            var elmahPath = ConfigurationManager.AppSettings["elmah.mvc.route"]
+                ?? ConfigurationManager.AppSettings["elmah.route"]
+                ?? "elmah.axd";
             var errors = errorList
                 .Select(errorEntry =>
                         new ErrorModel
