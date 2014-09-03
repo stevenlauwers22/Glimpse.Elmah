@@ -8,7 +8,6 @@ var dotNetBuild = Require<DotNetBuildScriptPackContext>();
 dotNetBuild.AddTarget("ci", "Continuous integration target", c 
     => c.DependsOn("updateVersionNumber")
         .And("buildRelease")
-        .And("runTests")
         .And("createPackage")
 );
 
