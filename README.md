@@ -8,7 +8,7 @@ Elmah stands for Error Logging Modules and Handlers. It’s an application-wide er
 ## Using Elmah with ASP.NET MVC
 Since we have NuGet, setting up Elmah with an ASP.NET MVC application has become really easy. Right click your web application and select ‘Add Library Package Reference…’ to pop up the NuGet Package Manager. Search for Elmah and install it. After installing, Elmah will have been added as a project reference.
 
-![](https://raw.github.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image1.png)
+![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image1.PNG)
 
 The next step is to configure Elmah. I won’t go into too much detail here. We’ll just set up Elmah to log all errors to an in-memory repository and to expose those errors through a web page. First let’s add the following code to the <configSections> node to make Elmah read it’s configuration from your web.config.
 
@@ -63,11 +63,11 @@ To achieve this we have to add an HTTP module and an HTTP handler. The module is
 
 Let’s take a closer look at the registration of the HTTP handler. We specified a path ‘elmah.axd’, this means that the handler will only kick in when we browse to that specific path. So, let’s launch our application and take a look. If I browse to http://localhost/elmah.axd I get this:
 
-![](https://raw.github.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image2.png)
+![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image2.PNG)
 
 And oh, it even gets better. Lets click on the ‘details’ link next to the error message. This is where the magic happens:
 
-![](https://raw.github.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image3.png)
+![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image3.PNG)
 
 This is really neat; we get a ton of information on what was going on when the error was thrown. If an application error occurred we can almost immediately pin-point the problem. 
 Obviously you don’t want to give access to this log to everyone that visits your website, as user might be able to spot vital problems in your code and exploit them. You can prevent access to this log in various ways (no remote access, through ASP.NET authorization …). More info on this topic can be found here: [Elmah: Securing Error Log Pages](http://code.google.com/p/elmah/wiki/SecuringErrorLogPages).
@@ -90,7 +90,7 @@ For ASP.NET MVC 3 it currently already has a bunch of nice features, like:
 ## Using Glimpse with ASP.NET MVC
 Integrating Glimpse with ASP.NET MVC is very easy. It’s available as a [NuGet package](http://www.nuget.org/List/Packages/glimpse) so installing it literally takes about 30 seconds. Let’s have a look … Right click your web application and select ‘Add Library Package Reference…’ to pop up the NuGet Package Manager. Search for Glimpse and install it:
 
-![](https://raw.github.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image4.png)
+![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image4.PNG)
 
 The Glimpse NuGet package will automatically reference the right assembly and it will add a configuration section to your web.config. The only thing you have to do to get it up and running is the following:
 
@@ -98,18 +98,18 @@ The Glimpse NuGet package will automatically reference the right assembly and it
 - Browse to: http://localhost/Glimpse/Config
 - Click ‘Turn Glimpse On’.
 
-![](https://raw.github.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image5.png)
+![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image5.PNG)
 
 * Go back to you application, you should now see something like this:
 
-![](https://raw.github.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image6.png)
+![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image6.PNG)
 
 What these Glimpse guys developed is really mind blowing. Currently Glimpse is still beta, but in my opinion it’s stable enough to integrate with all of your current ASP.NET projects.
 
 !! Elmah for Glimpse - Best of both worlds
-Scott Hanselman, unofficially titled the funniest guy at Microsoft, recently featured Glimpse as [url:‘NuGet Package of the Week’|http://www.hanselman.com/blog/NuGetPackageOfTheWeek5DebuggingASPNETMVCApplicationsWithGlimpse.aspx]. At the end of the article he says:
+Scott Hanselman, unofficially titled the funniest guy at Microsoft, recently featured Glimpse as [‘NuGet Package of the Week’](http://www.hanselman.com/blog/NuGetPackageOfTheWeek5DebuggingASPNETMVCApplicationsWithGlimpse.aspx). At the end of the article he says:
 
-- ‘Glimpse, along with ELMAH, is officially my favorite add-on to ASP.NET MVC. I'll be using it every day and I recommend you do as well.’_
+> ‘Glimpse, along with ELMAH, is officially my favorite add-on to ASP.NET MVC. I'll be using it every day and I recommend you do as well.’
 
 So … wouldn’t it be cool to integrate Elmah with Glimpse?
 
@@ -132,7 +132,7 @@ The Elmah plugin for Glimpse is available as a [NuGet package](http://www.nuget.
 
 The package has dependencies to Glimpse and Elmah, so if you haven’t got these package installed yet then NuGet will get them automatically as well. If you didn’t have Elmah before, you might still have to configure it. 
 
-![](https://raw.github.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image7.png)
+![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image7.PNG)
 
 After installing the package you still have to include the Elmah for Glimpse client side script on your pages, preferable in your main master page.
 
@@ -142,7 +142,7 @@ After installing the package you still have to include the Elmah for Glimpse cli
 
 Let’s run our application again and see what happens. Our Elmah plugin has been added as a reference to the project so it will be discovered by the Glimpse plugin system. Glimpse will load it into its UI and voila, there we have it:
 
-![](https://raw.github.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image8.png)
+![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image8.PNG)
 
 ### Future
 If there's any feature you would like to see implemented, you can always submit a feature request. If you want to implement a feature yourself, you can fork the project and submit a pull request.
@@ -178,7 +178,7 @@ If there's any feature you would like to see implemented, you can always submit 
 - Added details link
 - Added pager
 
-![](https://raw.github.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image10.png)
+![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image10.PNG)
 
 05/18/2011 - 0.9.0.0
 - Initial version
