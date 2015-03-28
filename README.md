@@ -1,16 +1,26 @@
-# Glimpse for Elmah – Best of both worlds
+# Glimpse for Elmah â€“ Best of both worlds
+
+## Important node
+
+The article below is a bit out of date, it's not a good representation of Glimpse's current capabilities and how Glimpse currently looks. Basically all you need to do to get this plugin up and running is installing it in your web application.
+
+> Install-Package Glimpse.Elmah
+
+After installing the plugin, you should get a tab called 'Elmah' in your Glimpse UI. The tab will remain disabled it there's nothing to show.
+
+The rest of this article gives more background information on how Glimpse and Elmah work and how you can configure both libraries to fit your needs.
 
 ## Introducing Elmah
-We all know [Elmah](http://code.google.com/p/elmah/) right? It’s one of the top packages in [NuGet](http://www.nuget.org/List/Packages/elmah). For those who don’t really know or use Elmah, I’ll give a brief explanation of the functionality it provides and how you can use it in your application.
+We all know [Elmah](http://code.google.com/p/elmah/) right? Itâ€™s one of the top packages in [NuGet](http://www.nuget.org/List/Packages/elmah). For those who donâ€™t really know or use Elmah, Iâ€™ll give a brief explanation of the functionality it provides and how you can use it in your application.
 
-Elmah stands for Error Logging Modules and Handlers. It’s an application-wide error logging library which logs nearly all unhandled exceptions. It provides you with a web page which enables you to (remotely) view the log of recorded exceptions. This log doesn’t only contain the error message; it also includes the entire stack trace and the values of all server variables at the time of the error.
+Elmah stands for Error Logging Modules and Handlers. Itâ€™s an application-wide error logging library which logs nearly all unhandled exceptions. It provides you with a web page which enables you to (remotely) view the log of recorded exceptions. This log doesnâ€™t only contain the error message; it also includes the entire stack trace and the values of all server variables at the time of the error.
 
 ## Using Elmah with ASP.NET MVC
-Since we have NuGet, setting up Elmah with an ASP.NET MVC application has become really easy. Right click your web application and select ‘Add Library Package Reference…’ to pop up the NuGet Package Manager. Search for Elmah and install it. After installing, Elmah will have been added as a project reference.
+Since we have NuGet, setting up Elmah with an ASP.NET MVC application has become really easy. Right click your web application and select â€˜Add Library Package Referenceâ€¦â€™ to pop up the NuGet Package Manager. Search for Elmah and install it. After installing, Elmah will have been added as a project reference.
 
 ![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image1.PNG)
 
-The next step is to configure Elmah. I won’t go into too much detail here. We’ll just set up Elmah to log all errors to an in-memory repository and to expose those errors through a web page. First let’s add the following code to the <configSections> node to make Elmah read it’s configuration from your web.config.
+The next step is to configure Elmah. I wonâ€™t go into too much detail here. Weâ€™ll just set up Elmah to log all errors to an in-memory repository and to expose those errors through a web page. First letâ€™s add the following code to the <configSections> node to make Elmah read itâ€™s configuration from your web.config.
 
 ```
 <sectionGroup name="elmah">
@@ -31,7 +41,7 @@ We still have to do two things to get everything up and running:
 - Make Elmah catch and log all unhandled exceptions
 - Expose a web page to allow the user to view everything that got caught by Elmah
 
-To achieve this we have to add an HTTP module and an HTTP handler. The module is responsible for logging the exceptions while the HTTP handler will render a page with a list of errors. You’ll have to add these sections to both the <system.web> node and the <system.webServer> node in order to support IIS running in Classic mode as well as Integrated mode. More info in this can be found on [MSDN – How to: Register HTPP Handlers](http://msdn.microsoft.com/en-us/library/46c5ddfy.aspx).
+To achieve this we have to add an HTTP module and an HTTP handler. The module is responsible for logging the exceptions while the HTTP handler will render a page with a list of errors. Youâ€™ll have to add these sections to both the <system.web> node and the <system.webServer> node in order to support IIS running in Classic mode as well as Integrated mode. More info in this can be found on [MSDN â€“ How to: Register HTPP Handlers](http://msdn.microsoft.com/en-us/library/46c5ddfy.aspx).
 
 ```
 <system.web>
@@ -61,19 +71,19 @@ To achieve this we have to add an HTTP module and an HTTP handler. The module is
 </system.webServer>
 ```
 
-Let’s take a closer look at the registration of the HTTP handler. We specified a path ‘elmah.axd’, this means that the handler will only kick in when we browse to that specific path. So, let’s launch our application and take a look. If I browse to http://localhost/elmah.axd I get this:
+Letâ€™s take a closer look at the registration of the HTTP handler. We specified a path â€˜elmah.axdâ€™, this means that the handler will only kick in when we browse to that specific path. So, letâ€™s launch our application and take a look. If I browse to http://localhost/elmah.axd I get this:
 
 ![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image2.PNG)
 
-And oh, it even gets better. Lets click on the ‘details’ link next to the error message. This is where the magic happens:
+And oh, it even gets better. Lets click on the â€˜detailsâ€™ link next to the error message. This is where the magic happens:
 
 ![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image3.PNG)
 
 This is really neat; we get a ton of information on what was going on when the error was thrown. If an application error occurred we can almost immediately pin-point the problem. 
-Obviously you don’t want to give access to this log to everyone that visits your website, as user might be able to spot vital problems in your code and exploit them. You can prevent access to this log in various ways (no remote access, through ASP.NET authorization …). More info on this topic can be found here: [Elmah: Securing Error Log Pages](http://code.google.com/p/elmah/wiki/SecuringErrorLogPages).
+Obviously you donâ€™t want to give access to this log to everyone that visits your website, as user might be able to spot vital problems in your code and exploit them. You can prevent access to this log in various ways (no remote access, through ASP.NET authorization â€¦). More info on this topic can be found here: [Elmah: Securing Error Log Pages](http://code.google.com/p/elmah/wiki/SecuringErrorLogPages).
 
 ## Introducing Glimpse
-Most of you probably know Firebug. And actually, [Glimpse](http://getglimpse.com/) is a lot like Firebug, except it’s implemented in JavaScript on the client side with hooks in to ASP.NET on the server side. What Firebug is for the client, Glimpse does for the server... in other words, a client side Glimpse into what’s going on in your server.
+Most of you probably know Firebug. And actually, [Glimpse](http://getglimpse.com/) is a lot like Firebug, except itâ€™s implemented in JavaScript on the client side with hooks in to ASP.NET on the server side. What Firebug is for the client, Glimpse does for the server... in other words, a client side Glimpse into whatâ€™s going on in your server.
 
 Currently Glimpse can only be used within web applications that target .NET 4.0; however the Glimpse team is currently working on a build that supports.NET 3.5 as well. As a matter of fact, Glimpse is not just a .NET only tool; currently it only works with ASP.NET MVC and Web Forms but eventually it will support Ruby on Rails, PHP and others.
 
@@ -85,18 +95,18 @@ For ASP.NET MVC 3 it currently already has a bunch of nice features, like:
 - Server variables inspection
 - Session inspection
 - .NET Tracing (no more need for the trace.axd)
-- …
+- â€¦
 
 ## Using Glimpse with ASP.NET MVC
-Integrating Glimpse with ASP.NET MVC is very easy. It’s available as a [NuGet package](http://www.nuget.org/List/Packages/glimpse) so installing it literally takes about 30 seconds. Let’s have a look … Right click your web application and select ‘Add Library Package Reference…’ to pop up the NuGet Package Manager. Search for Glimpse and install it:
+Integrating Glimpse with ASP.NET MVC is very easy. Itâ€™s available as a [NuGet package](http://www.nuget.org/List/Packages/glimpse) so installing it literally takes about 30 seconds. Letâ€™s have a look â€¦ Right click your web application and select â€˜Add Library Package Referenceâ€¦â€™ to pop up the NuGet Package Manager. Search for Glimpse and install it:
 
 ![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image4.PNG)
 
 The Glimpse NuGet package will automatically reference the right assembly and it will add a configuration section to your web.config. The only thing you have to do to get it up and running is the following:
 
 - Launch your application
-- Browse to: http://localhost/Glimpse/Config
-- Click ‘Turn Glimpse On’.
+- Browse to: http://localhost/glimpse.axd
+- Click â€˜Turn Glimpse Onâ€™.
 
 ![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image5.PNG)
 
@@ -104,43 +114,36 @@ The Glimpse NuGet package will automatically reference the right assembly and it
 
 ![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image6.PNG)
 
-What these Glimpse guys developed is really mind blowing. Currently Glimpse is still beta, but in my opinion it’s stable enough to integrate with all of your current ASP.NET projects.
+What these Glimpse guys developed is really mind blowing. Currently Glimpse is still beta, but in my opinion itâ€™s stable enough to integrate with all of your current ASP.NET projects.
 
 !! Elmah for Glimpse - Best of both worlds
-Scott Hanselman, unofficially titled the funniest guy at Microsoft, recently featured Glimpse as [‘NuGet Package of the Week’](http://www.hanselman.com/blog/NuGetPackageOfTheWeek5DebuggingASPNETMVCApplicationsWithGlimpse.aspx). At the end of the article he says:
+Scott Hanselman, unofficially titled the funniest guy at Microsoft, recently featured Glimpse as [â€˜NuGet Package of the Weekâ€™](http://www.hanselman.com/blog/NuGetPackageOfTheWeek5DebuggingASPNETMVCApplicationsWithGlimpse.aspx). At the end of the article he says:
 
-> ‘Glimpse, along with ELMAH, is officially my favorite add-on to ASP.NET MVC. I'll be using it every day and I recommend you do as well.’
+> â€˜Glimpse, along with ELMAH, is officially my favorite add-on to ASP.NET MVC. I'll be using it every day and I recommend you do as well.â€™
 
-So … wouldn’t it be cool to integrate Elmah with Glimpse?
+So â€¦ wouldnâ€™t it be cool to integrate Elmah with Glimpse?
 
 ### Plugin System
-Glimpse has a really clean plugin system. Internally they use [MEF](http://mef.codeplex.com/) to discover extensions. The best of all is that writing a Glimpse plugin is really easy. All you have to do is:
+Glimpse has a really neat plugin system. The best of all is that writing a Glimpse plugin is really easy. All you have to do is:
 
-- Implement the IGlimpsePlugin interface
-- Decorate your class with the GlimpsePlugin attribute
+- Implement the ITab interface
+- Or inherit from the TabBase class, which already implements the ITab interface
 
-The IGlimpsePlugin interface has the following methods:
+The ITab interface has the following methods:
 
 - A getter for the Name of the plugin: this property will be used as the name of the tab in the Glimpse user interface.
 - GetData method: accepts an HttpApplication parameter and returns an object. The object you return will be serialized into JSON, sent to the client and rendered by the Glimpse UI. How it will be rendered depends on the kind of object you return. More details about this can be found on the Glimpse Protocol page.
-- SetupInit method: this is the place where you perform any initialization that needs to be done. This method will run once (when your plugin is loaded for the first time). If you want this method to be called by Glimpse, you will need to set the ShouldSetupInInit property on the GlimpsePlugin attribute to true:  GlimpsePlugin(ShouldSetupInInit=true)
 
 The GetData method is the place where you should make any decisions about what should be rendered and how you want to render it. If this method returns null, then your tab will be disabled in the Glimpse UI.
 
 ### NuGet Package
-The Elmah plugin for Glimpse is available as a [NuGet package](http://www.nuget.org/List/Packages/Glimpse.Elmah). To install the package, right click your web application and select ‘Add Library Package Reference …’ search for either ‘Glimpse’, ‘Elmah’ or ‘Glimpse.Elmah’ and the Package Manager will come up with the ‘Elmah plugin for Glimpse’. 
+The Elmah plugin for Glimpse is available as a [NuGet package](http://www.nuget.org/List/Packages/Glimpse.Elmah). To install the package, right click your web application and select â€˜Add Library Package Reference â€¦â€™ search for either â€˜Glimpseâ€™, â€˜Elmahâ€™ or â€˜Glimpse.Elmahâ€™ and the Package Manager will come up with the â€˜Elmah plugin for Glimpseâ€™. 
 
-The package has dependencies to Glimpse and Elmah, so if you haven’t got these package installed yet then NuGet will get them automatically as well. If you didn’t have Elmah before, you might still have to configure it. 
+The package has dependencies to Glimpse and Elmah, so if you havenâ€™t got these package installed yet then NuGet will get them automatically as well. If you didnâ€™t have Elmah before, you might still have to configure it. 
 
 ![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image7.PNG)
 
-After installing the package you still have to include the Elmah for Glimpse client side script on your pages, preferable in your main master page.
-
-```
-<script src="<%: Url.Content("~/Glimpse/Resource/?resource=Pager") %>" type="text/javascript"></script>
-```
-
-Let’s run our application again and see what happens. Our Elmah plugin has been added as a reference to the project so it will be discovered by the Glimpse plugin system. Glimpse will load it into its UI and voila, there we have it:
+Letâ€™s run our application again and see what happens. Our Elmah plugin has been added as a reference to the project so it will be discovered by the Glimpse plugin system. Glimpse will load it into its UI and voila, there we have it:
 
 ![](https://raw.githubusercontent.com/stevenlauwers22/Glimpse.Elmah/master/.documents/Image8.PNG)
 
