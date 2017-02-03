@@ -5,8 +5,14 @@
 /Glimpse.Elmah.Sample/obj
 /Glimpse.Elmah.Sample/Glimpse.Elmah.Sample.csproj.user
 
+/Glimpse.Elmah.SampleMvc/bin
+/Glimpse.Elmah.SampleMvc/obj
+/Glimpse.Elmah.SampleMvc/Glimpse.Elmah.SampleMvc.csproj.user
+
 /Glimpse.Elmah.ncrunchsolution
 /Glimpse.Elmah.ncrunchsolution.user
 /Glimpse.Elmah.v11.suo
 /Glimpse.Elmah.sln.DotSettings
 /Glimpse.Elmah.v12.suo
+
+/.vs

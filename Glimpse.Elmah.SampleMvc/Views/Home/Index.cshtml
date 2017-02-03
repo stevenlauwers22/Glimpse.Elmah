@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Type>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <title>Glimpse.Elmah.SampleMvc</title>
+
+</head>
+
+<body>
+
+    <form action="@Url.Action("Index", "Home")" method="post">
+        <fieldset>
+            <p>
+                @Html.DropDownList("ExceptionTypeToThrow", Model.Select(exception => new SelectListItem {Value = exception.FullName, Text = exception.Name }))
+            </p>
+        </fieldset>
+
+        <br />
+        
+        <input type="submit" value="Throw" />
+    </form>
+
+</body>
+
+</html>
